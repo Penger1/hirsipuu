@@ -12,7 +12,7 @@ def näytä_sana(sana, arvattuja_kirjaimia):
             näytetty_sana += "_"
     return näytetty_sana
 
-def play_hangman():
+def pelaa_hirsipuu():
     sanat = ['lehmä', 'porsas', 'kana', 'lammas', 'ankka']
     max_yritykset = 3  # Maksimi sallitut väärät arvaukset
     arvattuja_kirjaimia = []  # Lista tallentamaan arvatut kirjaimet
@@ -43,4 +43,4 @@ def play_hangman():
                 print("\nOnnittelut! Voitit! Sana oli:", sana)
                 break
 
-play_hangman()
+pelaa_hirsipuu()
