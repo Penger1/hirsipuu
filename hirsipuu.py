@@ -1,9 +1,9 @@
 import random
 
-def select_word(sanat):
+def valitse_sana(sanat):
     return random.choice(sanat)
 
-def display_word(sana, arvattuja_kirjaimia):
+def näytä_sana(sana, arvattuja_kirjaimia):
     näytetty_sana = ""
     for kirjain in sana:
         if kirjain in arvattuja_kirjaimia:
@@ -16,14 +16,14 @@ def play_hangman():
     sanat = ['lehmä', 'porsas', 'kana', 'lammas', 'ankka']
     max_yritykset = 3  # Maksimi sallitut väärät arvaukset
     arvattuja_kirjaimia = []  # Lista tallentamaan arvatut kirjaimet
-    sana = select_word(sanat)  # Valitaan sana satunnaisesti
+    sana = valitse_sana(sanat)  # Valitaan sana satunnaisesti
     yritykset = 0  # Laskuri väärille arvauksille
 
     print("Tervetuloa Hangman-peliin!")
     print("Arvaa sana. Sinulla on", max_yritykset, "yritystä.")
 
     while True:
-        print("\nNykyinen sana:", display_word(sana, arvattuja_kirjaimia))  # Näytä nykyinen tila sanasta
+        print("\nNykyinen sana:", näytä_sana(sana, arvattuja_kirjaimia))  # Näytä nykyinen tila sanasta
         arvaa = input("Syötä kirjain: ").lower()  # Pyydä pelaajaa syöttämään kirjain ja muuttaa se pienaakkoseksi
 
         if arvaa in arvattuja_kirjaimia:  # Tarkistaa, onko kirjain jo arvattu
@@ -39,7 +39,7 @@ def play_hangman():
                 print("\nValitettavasti hävisit! Sana oli:", sana)
                 break
         else:
-            if "_" not in display_word(sana, arvattuja_kirjaimia):  # Tarkistaa, onko kaikki kirjaimet arvattu
+            if "_" not in näytä_sana(sana, arvattuja_kirjaimia):  # Tarkistaa, onko kaikki kirjaimet arvattu
                 print("\nOnnittelut! Voitit! Sana oli:", sana)
                 break
 
